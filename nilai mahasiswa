@@ -1,0 +1,66 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package jrp2nilaimhs;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Mahasiswa
+ */
+public class JrP2NilaiMhs {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        String nama, nim, grade="0";
+        double absen, tt, uts, uas, na;
+        nama = JOptionPane.showInputDialog("Siapa Nama Anda : ");
+        nim = JOptionPane.showInputDialog("Berapa NIM Anda : ");
+        
+        absen = Double.parseDouble(JOptionPane.showInputDialog("Masukkan Nilai Absen : "));
+        if(absen > 100){
+            JOptionPane.showMessageDialog(null,"Nilai Tidak Valid, Masukkan Nilai 0 - 100");
+            System.exit(0);
+        }
+        
+        tt = Double.parseDouble(JOptionPane.showInputDialog("Masukkan Nilai Tugas Terstruktur : "));
+         if(tt > 100){
+            JOptionPane.showMessageDialog(null,"Nilai Tidak Valid, Masukkan Nilai 0 - 100");
+            System.exit(0);
+        }
+         
+        uts = Double.parseDouble(JOptionPane.showInputDialog("Masukkan Nilai UTS : "));
+         if(uts > 100){
+            JOptionPane.showMessageDialog(null,"Nilai Tidak Valid, Masukkan Nilai 0 - 100");
+            System.exit(0);
+        }
+         
+        uas = Double.parseDouble(JOptionPane.showInputDialog("Masukkan Nilai UAS : "));
+         if(uas > 100){
+            JOptionPane.showMessageDialog(null,"Nilai Tidak Valid, Masukkan Nilai 0 - 100");
+            System.exit(0);
+        }
+        
+        na = (absen*0.1) + (tt*0.2) + (uts*0.3) + (uas*0.4);
+        if (na >=80 && na <=100){
+            grade = "A";
+    }   else if (na >=70 && na <=79.99){
+            grade = "B";
+    }   else if (na >=60 && na <=69.99){
+            grade= "C";
+    }   else if (na >=50 && na <=59.99){
+            grade = "D";
+    }   else if (na <50){
+            grade = "E";
+    }
+        
+        JOptionPane.showMessageDialog(null,"Nama : " +nama  +"\nNIM : " +nim +"\nNilai Akhir : " + na +"\nGrade : " +grade);
+    
+    }
+    
+}
